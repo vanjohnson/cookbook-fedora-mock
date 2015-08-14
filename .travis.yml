@@ -6,7 +6,7 @@ before_install:
 - curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
 install:
 - sudo apt-get install chefdk
-- /opt/chefdk/bin/chef gem install kitchen-docker
+- /opt/chefdk/bin/chef gem install kitchen-docker-api
 script:
 - /opt/chefdk/bin/chef exec rake style
 - /opt/chefdk/bin/chef exec rake unit
