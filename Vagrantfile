@@ -36,7 +36,7 @@ su -l -c "chef exec gem install travis" vagrant
 # Configure Kitchen to use Kitchen-Docker within Vagrant
 su -c "echo >> ~/.bashrc" vagrant
 su -c "echo '# Modify Vagrant to use Kitchen-Docker' >> ~/.bashrc" vagrant
-su -c "echo 'export KITCHEN_YAML=/vagrant/.kitchen.docker.yml' >> ~/.bashrc" vagrant
+su -c "echo 'export KITCHEN_YAML=.kitchen.docker.yml' >> ~/.bashrc" vagrant
 
 # Configure git Environment
 su -c "git config --global push.default simple" vagrant
