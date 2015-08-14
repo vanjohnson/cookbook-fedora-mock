@@ -1,9 +1,9 @@
 fedora-mock Cookbook
 ====================
-Installs [Fedora Mock](https://fedoraproject.org/wiki/Mock?rd=Subprojects/Mock)
-
 master branch: [![Build Status](https://travis-ci.org/st-isidore-de-seville/cookbook-fedora-mock.svg?branch=master)](https://travis-ci.org/st-isidore-de-seville/cookbook-fedora-mock)
 develop branch: [![Build Status](https://travis-ci.org/st-isidore-de-seville/cookbook-fedora-mock.svg?branch=develop)](https://travis-ci.org/st-isidore-de-seville/cookbook-fedora-mock)
+
+Installs [Fedora Mock](https://fedoraproject.org/wiki/Mock?rd=Subprojects/Mock)
 
 Requirements
 ------------
