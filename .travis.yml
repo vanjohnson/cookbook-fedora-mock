@@ -1,0 +1,13 @@
+# http://www.invalidchecksum.net/2015/08/travis-ci-gce-docker-test-kitchen.html
+sudo: required
+services:
+- docker
+language: ruby
+before_install:
+- curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
+install:
+- sudo apt-get install chefdk
+- /opt/chefdk/bin/chef gem install kitchen-docker
+script:
+- /opt/chefdk/bin/chef exec rake style
+- /opt/chefdk/bin/chef exec rake unit
