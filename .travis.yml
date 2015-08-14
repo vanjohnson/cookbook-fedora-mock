@@ -10,3 +10,4 @@ install:
 script:
 - /opt/chefdk/bin/chef exec rake style
 - /opt/chefdk/bin/chef exec rake unit
+- /opt/chefdk/bin/chef exec rake integration:docker
