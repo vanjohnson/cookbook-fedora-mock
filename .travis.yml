@@ -12,7 +12,7 @@ before_install:
 
 install:
 - sudo apt-get install chefdk
-- sudo apt-get install linux-generic
+- sudo apt-get install linux-headers-3.16.0-31-generic
 - sudo apt-get install dkms
 - sudo apt-get install virtualbox-5.0
 - wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
