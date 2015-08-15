@@ -8,25 +8,9 @@ before_install:
 # Repo for ChefDK
 - curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
 
-# Repo for VirtualBox
-- sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib'
-- wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-
-# Ensure Repositories are Cached
-- sudo apt-get update
-
 install:
 # Install ChefDK
 - sudo apt-get install chefdk
-
-# Install VirtualBox
-- sudo apt-get install linux-headers-3.16.0-31-generic
-- sudo apt-get install dkms
-- sudo apt-get install virtualbox-5.0
-
-# Install Vagrant
-- wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
-- sudo dpkg -i vagrant_1.7.4_x86_64.deb
 
 # Install Kitchen Docker API Gem
 - /opt/chefdk/bin/chef gem install kitchen-docker-api
@@ -34,22 +18,31 @@ install:
 script:
 - /opt/chefdk/bin/chef exec rake style
 - /opt/chefdk/bin/chef exec rake unit
-- /opt/chefdk/bin/chef exec rake integration:vagrant
 - /opt/chefdk/bin/chef exec kitchen test -d never
 
 env:
   global:
     - KITCHEN_YAML=.kitchen.docker.yml
 
-#   matrix:
-#     - KITCHEN_INSTANCE='default-centos-5'
-#     - KITCHEN_INSTANCE='default-centos-6'
-#     - KITCHEN_INSTANCE='default-centos-7'
-#     - KITCHEN_INSTANCE='plugins-centos-6'
-#     - KITCHEN_INSTANCE='plugins-centos-7'
-#     - KITCHEN_INSTANCE='users-centos-5'
-#     - KITCHEN_INSTANCE='users-centos-6'
-#     - KITCHEN_INSTANCE='users-centos-7'
-#     - KITCHEN_INSTANCE='enable-epel-centos-5'
-#     - KITCHEN_INSTANCE='enable-epel-centos-6'
-#     - KITCHEN_INSTANCE='enable-epel-centos-7'
+# https://github.com/test-kitchen/kitchen-vagrant/issues/188
+#
+# before_install:
+#  Repo for ChefDK
+# - curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
+#  Repo for VirtualBox
+# - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib'
+# - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
+#  Ensure Repositories are Cached
+# - sudo apt-get update
+#
+# install:
+#  Install VirtualBox
+# - sudo apt-get install linux-headers-3.16.0-31-generic
+# - sudo apt-get install dkms
+# - sudo apt-get install virtualbox-5.0
+# Install Vagrant
+# - wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
+# - sudo dpkg -i vagrant_1.7.4_x86_64.deb
+#
+# script:
+# - /opt/chefdk/bin/chef exec rake integration:vagrant
