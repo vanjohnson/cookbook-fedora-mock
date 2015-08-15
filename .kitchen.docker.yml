@@ -45,3 +45,6 @@ suites:
     attributes:
       fedora-mock:
         enable-epel: false
+    excludes:
+      - fedora-20
+      - fedora-21
