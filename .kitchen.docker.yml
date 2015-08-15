@@ -5,8 +5,8 @@ provisioner:
   name: chef_zero
 
 platforms:
-  - name: centos-5.11
-  - name: centos-6.6
+  - name: centos-5
+  - name: centos-6
   - name: centos-7
   # https://github.com/portertech/kitchen-docker/issues/147
   # - name: fedora-20
@@ -25,7 +25,7 @@ suites:
         plugins:
           scm: true
     excludes:
-      - centos-5.11
+      - centos-5
 
   - name: users
     run_list:
