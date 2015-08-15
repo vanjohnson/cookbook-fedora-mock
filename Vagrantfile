@@ -40,7 +40,14 @@ su -c "git config --global push.default simple" vagrant
 SCRIPT
 
 Vagrant.configure('2') do |config|
+  config.vm.boot_timeout = 600
+
   config.vm.box = 'ubuntu/trusty64'
+
+  config.vm.provider "virtualbox" do |v|
+    v.memory = 1024
+    v.cpus = 2
+  end
 
   config.vm.provision 'shell', inline: script
 end
