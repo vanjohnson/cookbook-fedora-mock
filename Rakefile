@@ -43,10 +43,20 @@ namespace :integration do
       instance.test(:always)
     end
   end
+
+  desc 'Run Test Kitchen with AWS'
+  task :aws do
+    Kitchen.logger = Kitchen.default_file_logger
+    @loader = Kitchen::Loader::YAML.new(project_config: './.kitchen.aws.yml')
+    config = Kitchen::Config.new(loader: @loader)
+    config.instances.each do |instance|
+      instance.test(:always)
+    end
+  end
 end
 
 desc 'Run all integration tests'
-task integration: ['integration:vagrant', 'integration:docker']
+task integration: ['integration:vagrant', 'integration:docker', 'integration:aws']
 
 # Default
 task default: %w(style unit)

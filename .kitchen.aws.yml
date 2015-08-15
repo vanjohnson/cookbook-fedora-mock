@@ -1,0 +1,61 @@
+driver:
+  name: ec2
+  instance_type: m3.medium
+
+provisioner:
+  name: chef_zero
+
+transport:
+  ssh_key: /home/vagrant/awskey
+  connection_timeout: 120
+
+platforms:
+  - name: centos-6
+    driver:
+      image_id: ami-bc8131d4
+    transport:
+      username: root
+  - name: centos-7
+    driver:
+      image_id: ami-96a818fe
+    transport:
+      username: centos
+  - name: fedora-21
+    driver:
+      image_id: ami-b61a0fde
+    transport:
+      username: fedora
+
+suites:
+  - name: default
+    run_list:
+      - recipe[fedora-mock::default]
+
+  - name: plugins
+    run_list:
+      - recipe[fedora-mock::default]
+    attributes:
+      fedora-mock:
+        plugins:
+          scm: true
+
+  - name: users
+    run_list:
+      - recipe[test::create_mock_users]
+      - recipe[fedora-mock::default]
+    attributes:
+      fedora-mock:
+        users:
+          jenkins: true
+          teamcity: true
+          travis: true
+
+  - name: enable-epel
+    run_list:
+      - recipe[yum-epel]
+      - recipe[fedora-mock::default]
+    attributes:
+      fedora-mock:
+        enable-epel: false
+    excludes:
+      - fedora-21
