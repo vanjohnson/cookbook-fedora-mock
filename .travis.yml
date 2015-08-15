@@ -20,15 +20,15 @@ env:
   global:
     - KITCHEN_YAML=.kitchen.docker.yml
   matrix:
-    - KITCHEN_INSTANCE='default-centos-5.11'
-    - KITCHEN_INSTANCE='default-centos-6.6'
+    - KITCHEN_INSTANCE='default-centos-511'
+    - KITCHEN_INSTANCE='default-centos-66'
     - KITCHEN_INSTANCE='default-centos-7'
-    - KITCHEN_INSTANCE='plugins-centos-5.11'
-    - KITCHEN_INSTANCE='plugins-centos-6.6'
+    - KITCHEN_INSTANCE='plugins-centos-511'
+    - KITCHEN_INSTANCE='plugins-centos-66'
     - KITCHEN_INSTANCE='plugins-centos-7'
-    - KITCHEN_INSTANCE='users-centos-5.11'
-    - KITCHEN_INSTANCE='users-centos-6.6'
+    - KITCHEN_INSTANCE='users-centos-511'
+    - KITCHEN_INSTANCE='users-centos-66'
     - KITCHEN_INSTANCE='users-centos-7'
-    - KITCHEN_INSTANCE='enable-epel-centos-5.11'
-    - KITCHEN_INSTANCE='enable-epel-centos-6.6'
+    - KITCHEN_INSTANCE='enable-epel-centos-511'
+    - KITCHEN_INSTANCE='enable-epel-centos-66'
     - KITCHEN_INSTANCE='enable-epel-centos-7'
