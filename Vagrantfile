@@ -30,9 +30,6 @@ su -l -c "chef exec gem install kitchen-docker" vagrant
 # Install Kitchen-EC2 Ruby Gem
 su -l -c "chef exec gem install kitchen-ec2" vagrant
 
-# Install Travis Ruby Gem
-su -l -c "chef exec gem install travis" vagrant
-
 # Configure Kitchen to use Kitchen-Docker within Vagrant
 su -c "echo >> ~/.bashrc" vagrant
 su -c "echo '# Modify Vagrant to use Kitchen-Docker' >> ~/.bashrc" vagrant
