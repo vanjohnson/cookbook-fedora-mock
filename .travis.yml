@@ -6,7 +6,7 @@ services:
 
 before_install:
 - curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
-- sudo deb http://download.virtualbox.org/virtualbox/debian vivid contrib
+- sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib'
 - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 - sudo apt-get update
 
