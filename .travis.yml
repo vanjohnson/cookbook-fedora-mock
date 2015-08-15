@@ -23,7 +23,6 @@ env:
     - KITCHEN_INSTANCE='default-centos-511'
     - KITCHEN_INSTANCE='default-centos-66'
     - KITCHEN_INSTANCE='default-centos-7'
-    - KITCHEN_INSTANCE='plugins-centos-511'
     - KITCHEN_INSTANCE='plugins-centos-66'
     - KITCHEN_INSTANCE='plugins-centos-7'
     - KITCHEN_INSTANCE='users-centos-511'
