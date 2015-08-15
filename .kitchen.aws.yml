@@ -6,8 +6,7 @@ provisioner:
   name: chef_zero
 
 transport:
-  ssh_key: /home/vagrant/awskey
-  connection_timeout: 120
+  ssh_key: ~/.ssh/aws_key.pem
 
 platforms:
   - name: centos-6
