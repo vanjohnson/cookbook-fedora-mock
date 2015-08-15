@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-# epel was technically non enabled per this recipe
+# EPEL was technically non enabled per this recipe.  The purpose of the test is
+# to ensure that EPEL can be enabled in alternate ways outside of this cookbook.
 
 # mock package should be installed
 describe package('mock') do
