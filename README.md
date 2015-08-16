@@ -76,30 +76,32 @@ Contributing
 Development Environment
 -------------------
 
-The development environment for this repository consists of:
-* [ChefDK](https://downloads.chef.io/chef-dk/)
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-* [Vagrant](http://www.vagrantup.com/downloads.html)
-* your favorite text editor or IDE
+This repository contains a Vagrantfile which can be used to spin up a
+fully configured development environment in Vagrant.  
 
-`rake` and `kitchen` may be run as subcommands of `chef exec`.  If you have
-`chef shell-init` initialized in your environment, you may call these commands
-independent of `chef exec`.
+Vagrant requires the following:
+* [VirtualBox](https://www.virtualbox.org/)
+* [Vagrant](https://www.vagrantup.com/)
 
-The Vagrantfile is built on Ubuntu Trusty and includes ChefDK, Docker and the
-kitchen-docker ruby gem.  Integration testing in this environment can be
-performed using kitchen-docker.  The KITCHEN_YAML environment variable is set to
-use the .kitchen.docker.yml configuration file.
+The Vagrant environment for this repository consists of:
+* Ubuntu Trusty
+* current stable version of Ruby as installed by [RVM](https://rvm.io/)
+* [Bundler](http://bundler.io/) installed via `gem`
+* [Docker](https://www.docker.com/) for use in integration testing via
+  [test-kitchen](http://kitchen.ci/) and [kitchen-docker](https://github.com/portertech/kitchen-docker)
+* emacs
+* git
+* git-flow
+
+The Vagrant environment will initialize itself to:
+* install required Ruby gems
+* run integration testing via kitchen-docker when calling `kitchen`
 
 The Vagrant environment can be spun up by performing the following commands:
 
 1. `vagrant up`
 2. `vagrant ssh`
 3. `cd /vagrant/`
-
-`chef shell-init` is included as part of the vagrant user's environment so
-commands such as `rake` and `kitchen` can be executed without having to call it
-as part of a subcommand of `chef exec`.
 
 Authors
 -------------------
