@@ -2,6 +2,7 @@ require 'foodcritic'
 require 'kitchen'
 require 'rspec/core/rake_task'
 require 'rubocop/rake_task'
+require 'stove/rake_task'
 
 # Style tests
 namespace :style do
@@ -57,6 +58,9 @@ end
 
 desc 'Run all integration tests'
 task integration: ['integration:vagrant', 'integration:docker', 'integration:aws']
+
+# Publish
+Stove::RakeTask.new
 
 # Default
 task default: %w(style unit)

@@ -6,6 +6,8 @@ sudo: required
 services:
   - docker
 
+bundler_args: --binstubs
+
 script:
   - bundle exec rake style
   - bundle exec rake unit

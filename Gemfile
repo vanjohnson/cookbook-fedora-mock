@@ -17,3 +17,6 @@ gem 'kitchen-docker'
 gem 'kitchen-vagrant'
 gem 'kitchen-ec2'
 gem 'test-kitchen'
+
+# publish
+gem 'stove'

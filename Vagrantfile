@@ -31,7 +31,7 @@ su -c "echo 'export KITCHEN_YAML=.kitchen.docker.yml' >> ~/.bashrc" vagrant
 su -c "git config --global push.default simple" vagrant
 
 # Install Needed Gems
-su -l -c "cd /vagrant; bundle install" vagrant
+su -l -c "cd /vagrant; bundle install --binstubs" vagrant
 SCRIPT
 
 Vagrant.configure('2') do |config|
