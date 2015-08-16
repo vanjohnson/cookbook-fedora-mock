@@ -1,24 +1,15 @@
 # http://www.invalidchecksum.net/2015/08/travis-ci-gce-docker-test-kitchen.html
+language: ruby
+
 sudo: required
 
 services:
-- docker
-
-before_install:
-# Repo for ChefDK
-- curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
-
-install:
-# Install ChefDK
-- sudo apt-get install chefdk
-
-# Install Kitchen Docker API Gem
-- /opt/chefdk/bin/chef gem install kitchen-docker-api
+  - docker
 
 script:
-- /opt/chefdk/bin/chef exec rake style
-- /opt/chefdk/bin/chef exec rake unit
-- /opt/chefdk/bin/chef exec kitchen test -d never
+  - bundle exec rake style
+  - bundle exec rake unit
+  - bundle exec kitchen test -d never
 
 env:
   global:
@@ -27,8 +18,6 @@ env:
 # https://github.com/test-kitchen/kitchen-vagrant/issues/188
 #
 # before_install:
-#  Repo for ChefDK
-# - curl -s https://packagecloud.io/install/repositories/chef/stable/script.deb.sh | sudo bash
 #  Repo for VirtualBox
 # - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib'
 # - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
@@ -45,4 +34,4 @@ env:
 # - sudo dpkg -i vagrant_1.7.4_x86_64.deb
 #
 # script:
-# - /opt/chefdk/bin/chef exec rake integration:vagrant
+# - bundle exec rake integration:vagrant
