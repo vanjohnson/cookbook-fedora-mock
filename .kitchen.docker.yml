@@ -1,0 +1,50 @@
+driver:
+  name: docker
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: centos-5
+  - name: centos-6
+  - name: centos-7
+  # https://github.com/portertech/kitchen-docker/issues/147
+  # - name: fedora-20
+  # - name: fedora-21
+
+suites:
+  - name: default
+    run_list:
+      - recipe[fedora-mock::default]
+
+  - name: plugins
+    run_list:
+      - recipe[fedora-mock::default]
+    attributes:
+      fedora-mock:
+        plugins:
+          scm: true
+    excludes:
+      - centos-5
+
+  - name: users
+    run_list:
+      - recipe[test::create_mock_users]
+      - recipe[fedora-mock::default]
+    attributes:
+      fedora-mock:
+        users:
+          jenkins: true
+          teamcity: true
+          travis: true
+
+  - name: enable-epel
+    run_list:
+      - recipe[yum-epel]
+      - recipe[fedora-mock::default]
+    attributes:
+      fedora-mock:
+        enable-epel: false
+    excludes:
+      - fedora-20
+      - fedora-21
