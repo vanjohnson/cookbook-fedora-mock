@@ -104,6 +104,9 @@ The Vagrant environment can be spun up by performing the following commands:
 2. `vagrant ssh`
 3. `cd /vagrant/`
 
+It may take upwards of 30 minutes to spin up the environment due to the host
+environment and the installation and compilation of the Ruby gems.
+
 Authors
 -------------------
 - Author:: St. Isidore de Seville (<st.isidore.de.seville@gmail.com>)
