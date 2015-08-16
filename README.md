@@ -1,6 +1,7 @@
 fedora-mock Cookbook
 ====================
 [![Build Status](https://travis-ci.org/st-isidore-de-seville/cookbook-fedora-mock.svg?branch=master)](https://travis-ci.org/st-isidore-de-seville/cookbook-fedora-mock)
+[![Chef Cookbook](https://img.shields.io/cookbook/v/fedora-mock.svg)](https://supermarket.chef.io/cookbooks/fedora-mock)
 
 Installs [Fedora Mock](https://fedoraproject.org/wiki/Mock?rd=Subprojects/Mock)
 
