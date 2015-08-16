@@ -88,7 +88,8 @@ The Vagrant environment for this repository consists of:
 * current stable version of Ruby as installed by [RVM](https://rvm.io/)
 * [Bundler](http://bundler.io/) installed via `gem`
 * [Docker](https://www.docker.com/) for use in integration testing via
-  [test-kitchen](http://kitchen.ci/) and [kitchen-docker](https://github.com/portertech/kitchen-docker)
+  [test-kitchen](http://kitchen.ci/) and
+  [kitchen-docker](https://github.com/portertech/kitchen-docker)
 * emacs
 * git
 * git-flow
