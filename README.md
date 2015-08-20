@@ -84,16 +84,8 @@ Vagrant requires the following:
 * [VirtualBox](https://www.virtualbox.org/)
 * [Vagrant](https://www.vagrantup.com/)
 
-The Vagrant environment for this repository consists of:
-* Ubuntu Trusty
-* current stable version of Ruby as installed by [RVM](https://rvm.io/)
-* [Bundler](http://bundler.io/) installed via `gem`
-* [Docker](https://www.docker.com/) for use in integration testing via
-  [test-kitchen](http://kitchen.ci/) and
-  [kitchen-docker](https://github.com/portertech/kitchen-docker)
-* emacs
-* git
-* git-flow
+The Vagrant environment for this repository is based on:
+* [st-isidore-de-seville/trusty64-rvm-docker](https://atlas.hashicorp.com/st-isidore-de-seville/boxes/trusty64-rvm-docker)
 
 The Vagrant environment will initialize itself to:
 * install required Ruby gems
@@ -103,10 +95,7 @@ The Vagrant environment can be spun up by performing the following commands:
 
 1. `vagrant up`
 2. `vagrant ssh`
-3. `cd /vagrant/`
-
-It may take upwards of 30 minutes to spin up the environment due to the host
-environment and the installation and compilation of the Ruby gems.
+3. `cd /vagrant`
 
 Authors
 -------------------
