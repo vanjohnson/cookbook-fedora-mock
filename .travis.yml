@@ -6,8 +6,6 @@ sudo: required
 services:
   - docker
 
-bundler_args: --binstubs
-
 script:
   - bundle exec rake style
   - bundle exec rake unit
@@ -16,24 +14,3 @@ script:
 env:
   global:
     - KITCHEN_YAML=.kitchen.docker.yml
-
-# https://github.com/test-kitchen/kitchen-vagrant/issues/188
-#
-# before_install:
-#  Repo for VirtualBox
-# - sudo apt-add-repository 'deb http://download.virtualbox.org/virtualbox/debian trusty contrib'
-# - wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
-#  Ensure Repositories are Cached
-# - sudo apt-get update
-#
-# install:
-#  Install VirtualBox
-# - sudo apt-get install linux-headers-3.16.0-31-generic
-# - sudo apt-get install dkms
-# - sudo apt-get install virtualbox-5.0
-# Install Vagrant
-# - wget https://dl.bintray.com/mitchellh/vagrant/vagrant_1.7.4_x86_64.deb
-# - sudo dpkg -i vagrant_1.7.4_x86_64.deb
-#
-# script:
-# - bundle exec rake integration:vagrant
