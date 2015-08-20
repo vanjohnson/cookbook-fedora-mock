@@ -110,7 +110,7 @@ environment and the installation and compilation of the Ruby gems.
 
 Authors
 -------------------
-- Author:: St. Isidore de Seville (<st.isidore.de.seville@gmail.com>)
+- Author:: St. Isidore de Seville (st.isidore.de.seville@gmail.com)
 
 License
 -------------------
