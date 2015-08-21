@@ -13,7 +13,17 @@ gem 'berkshelf'
 
 # integration
 gem 'serverspec'
-gem 'kitchen-docker'
-gem 'kitchen-vagrant'
-gem 'kitchen-ec2'
 gem 'test-kitchen'
+
+group :'local-integration' do
+  gem 'kitchen-docker'
+  gem 'kitchen-vagrant'
+  gem 'kitchen-ec2'
+end
+
+group :'ci-integration' do
+  gem 'kitchen-docker-api'
+end
+
+# publish
+gem 'stove'

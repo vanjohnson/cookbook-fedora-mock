@@ -6,7 +6,7 @@ cookbook.
 
 0.1.0
 -----
-- St. Isidore de Seville (<st.isidore.de.seville@gmail.com>) - Initial release of fedora-mock
+- St. Isidore de Seville (st.isidore.de.seville@gmail.com) - Initial release of fedora-mock
 
 - - -
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax)
