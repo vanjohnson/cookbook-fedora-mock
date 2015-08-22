@@ -11,7 +11,7 @@ issues_url 'https://github.com/st-isidore-de-seville/cookbook-fedora-mock/issues
 
 recipe 'fedora-mock::default', 'Installs Fedora Mock'
 
-depends 'yum-epel', '~> 0.6.2'
+depends 'yum-epel', '~> 0.6'
 
 supports 'redhat'
 supports 'centos'
