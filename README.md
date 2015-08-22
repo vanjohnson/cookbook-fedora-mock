@@ -26,12 +26,12 @@ Attributes
   - _Description:_ Additional Fedora Mock plugins to install.  The hash key is
     the plugin.  If the hash value evaluates to true, the plugin will be
     installed.
-  - `empty`
+  - _Default:_ `empty`
 - `['fedora-mock']['users']`
   - _Type:_ Hash
   - _Description:_ Users of Fedora Mock.  The hash key is the user.  If the hash
     value evaluates to true, the user will be a managed group of Fedora Mock.
-  - `empty`
+  - _Default:_ `empty`
 
 Usage
 -----
