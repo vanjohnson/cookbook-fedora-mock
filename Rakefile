@@ -60,7 +60,9 @@ desc 'Run all integration tests'
 task integration: ['integration:vagrant', 'integration:docker', 'integration:aws']
 
 # Publish
-Stove::RakeTask.new
+Stove::RakeTask.new do |t|
+  t.stove_opts = ['--extended-metadata']
+end
 
 # Default
 task default: %w(style unit)
