@@ -10,8 +10,8 @@ cookbook.
   - add '--extended-metadata' option for stove rake publish task
   - add pessimistic version constraint for minor version of yum-epel
   - fix README.md to address rendering issues in Chef Supermarket
-  - remove boilerplate text from CHANGELOG.md
   - reorder attributes in metadata.rb for consistency across repos
+  - remove boilerplate text & change format of CHANGELOG.md
 
 0.1.0
 -----
