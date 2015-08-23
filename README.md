@@ -16,40 +16,22 @@ Requirements
 Attributes
 ----------
 #### fedora-mock::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['fedora-mock']['include-epel']</tt></td>
-    <td>Boolean</td>
-    <td>
-      Does this cookbook automatically include the EPEL respository?
-    </td>
-    <td><tt>true if a RHEL platform family; false if Fedora</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['fedora-mock']['plugins']</tt></td>
-    <td>Hash</td>
-    <td>
-      Additional Fedora Mock plugins to install.  The hash key is the plugin.
-      If the hash value evaluates to true, the plugin will be installed.
-    </td>
-    <td><tt>empty</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['fedora-mock']['users']</tt></td>
-    <td>Hash</td>
-    <td>
-      Users of Fedora Mock.  The hash key is the user.  If the hash value
-      evaluates to true, the user will be a managed group of Fedora Mock.
-    </td>
-    <td><tt>empty</tt></td>
-  </tr>
-</table>
+
+- `['fedora-mock']['include-epel']`
+  - _Type:_ Boolean
+  - _Description:_ Does this cookbook automatically include the EPEL repository?
+  - _Default:_ true if a RHEL platform family; false if Fedora
+- `['fedora-mock']['plugins']`
+  - _Type:_ Hash
+  - _Description:_ Additional Fedora Mock plugins to install.  The hash key is
+    the plugin.  If the hash value evaluates to true, the plugin will be
+    installed.
+  - _Default:_ `empty`
+- `['fedora-mock']['users']`
+  - _Type:_ Hash
+  - _Description:_ Users of Fedora Mock.  The hash key is the user.  If the hash
+    value evaluates to true, the user will be a managed group of Fedora Mock.
+  - _Default:_ `empty`
 
 Usage
 -----
@@ -76,20 +58,19 @@ Contributing
 
 Development Environment
 -------------------
-
 This repository contains a Vagrantfile which can be used to spin up a
 fully configured development environment in Vagrant.  
 
 Vagrant requires the following:
-* [VirtualBox](https://www.virtualbox.org/)
-* [Vagrant](https://www.vagrantup.com/)
+- [VirtualBox](https://www.virtualbox.org/)
+- [Vagrant](https://www.vagrantup.com/)
 
 The Vagrant environment for this repository is based on:
-* [st-isidore-de-seville/trusty64-rvm-docker](https://atlas.hashicorp.com/st-isidore-de-seville/boxes/trusty64-rvm-docker)
+- [st-isidore-de-seville/trusty64-rvm-docker](https://atlas.hashicorp.com/st-isidore-de-seville/boxes/trusty64-rvm-docker)
 
 The Vagrant environment will initialize itself to:
-* install required Ruby gems
-* run integration testing via kitchen-docker when calling `kitchen`
+- install required Ruby gems
+- run integration testing via kitchen-docker when calling `kitchen`
 
 The Vagrant environment can be spun up by performing the following commands:
 
@@ -103,7 +84,6 @@ Authors
 
 License
 -------------------
-
 ```text
 The MIT License (MIT)
 
@@ -126,3 +106,4 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+```
